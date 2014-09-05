@@ -44,13 +44,13 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
 	public function register()
 	{
 
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Auto.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/End.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Index.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Start.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Node.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Relation.php');
-	\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Property.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Auto.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/End.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Index.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Start.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Node.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Relation.php');
+	\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Property.php');
 
 	$default = $this->app['config']->get('database.default');
         $settings = $this->app['config']->get('database.connections');
