@@ -1,13 +1,13 @@
-<?php namespace LRezek\Neo4Laravel;
+<?php namespace LRezek\Neo4PHP4Laravel;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
-use HireVoice\Neo4j\Configuration;
-use HireVoice\Neo4j\EntityManager;
+use LRezek\Neo4PHP\Configuration;
+use LRezek\Neo4PHP\EntityManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class Neo4LaravelServiceProvider extends ServiceProvider {
+class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -33,7 +33,7 @@ class Neo4LaravelServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('lrezek/neo4jogm');
+        $this->package('lrezek/neo4php4laravel');
     }
 
 	/**
@@ -44,12 +44,13 @@ class Neo4LaravelServiceProvider extends ServiceProvider {
 	public function register()
 	{
 
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Auto.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Entity.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Index.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToMany.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToOne.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Property.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Auto.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/End.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Index.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Start.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Node.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Relation.php');
+	\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/lib/LRezek/Neo4j/Annotation/Property.php');
 
 	$default = $this->app['config']->get('database.default');
         $settings = $this->app['config']->get('database.connections');
