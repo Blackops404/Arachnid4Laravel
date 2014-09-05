@@ -84,5 +84,4 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
 	{
 		return array();
 	}
-
 }
