@@ -1,7 +1,7 @@
 About
 =====
 
-This is a service provider for Laravel 4.1 that uses [Lukas Rezek's PHP OGM](https://github.com/lrezek/Neo4PHP). It is based off of [Levi Stanley's Neo4jPhpOgm](https://github.com/niterain/Neo4jPhpOgm), but updated to work with Laravel 4.1.
+This is a service provider for Laravel 4.1 for the [Neo4PHP OGM](https://github.com/lrezek/Neo4PHP).
 
 Installation
 =============
