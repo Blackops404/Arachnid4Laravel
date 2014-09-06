@@ -1,4 +1,4 @@
-<?php namespace LRezek\Neo4PHP4Laravel;
+<?php namespace LRezek\Neo4PHP4Laravel\Providers;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
@@ -50,9 +50,9 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Start.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Node.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Relation.php');
-	\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Property.php');
+	    \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Property.php');
 
-	$default = $this->app['config']->get('database.default');
+        $default = $this->app['config']->get('database.default');
         $settings = $this->app['config']->get('database.connections');
 
         $config = (!empty($default) && $default == 'neo4j') ? $settings[$default] : $settings;
