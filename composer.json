@@ -1,6 +1,6 @@
 {
     "name": "lrezek/neo4php4laravel",
-    "description": "",
+    "description": "Neo4PHP provider and facade for laravel.",
     "authors": [
         {
             "name": "Lukas Rezek",
