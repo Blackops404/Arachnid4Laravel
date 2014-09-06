@@ -80,4 +80,13 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
         });
     }
 
+    /**
+     * List the services that this provider provides.
+     *
+     * @return array Provided services.
+     */
+    public function provides()
+    {
+        return ['lrezek.neo4php4laravel.entitymanager'];
+    }
 }
