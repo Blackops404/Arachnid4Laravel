@@ -41,7 +41,7 @@ And the facade to the `facades`:
 'OGM' => 'LRezek\Neo4PHP4Laravel\Facades\Neo4PHP4LaravelFacade',
 ```
 
-Note: You can change the name of the facade (OGM) to whatever you like.
+Note: You can change the name of the facade (`OGM`) to whatever you like.
 
 Database Configuration
 ===========
