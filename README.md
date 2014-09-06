@@ -35,6 +35,14 @@ Once Composer has updated your packages, you'll need to tell Lavarel about the s
 'LRezek\Neo4PHP4Laravel\Providers\Neo4PHP4LaravelServiceProvider',
 ```
 
+And the facade to the `facades`:
+
+```PHP
+'OGM' => 'LRezek\Neo4PHP4Laravel\Facades\Neo4PHP4LaravelFacade',
+```
+
+Note: You can change the name of the facade (OGM) to whatever you like.
+
 Database Configuration
 ===========
 
@@ -66,14 +74,8 @@ And set the default connection as follows:
 Usage
 ============================
 
-Once this set-up is complete, you can use entities and do queries as shown in [Lukas Rezek's OGM](https://github.com/lrezek/Neo4PHP). The only difference is in obtaining a singleton Entity manager. Instead of:
+Once this set-up is complete, you can use entities and do queries as shown in [Lukas Rezek's OGM](https://github.com/lrezek/Neo4PHP). To call functions in the entity manager, simply use the facade you defined above. For example:
 
 ```PHP
-$em = $this->get('lrezek.neo4php.entity_manager');
-```
-
-use:
-
-```PHP
-$em = App::make('entitymanager');
+OGM::persist()
 ```

@@ -13,6 +13,6 @@ class Neo4PHP4LaravelFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'entitymanager';
+        return 'lrezek.neo4php4laravel.entitymanager';
     }
 }
