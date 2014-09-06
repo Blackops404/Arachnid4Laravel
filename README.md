@@ -77,5 +77,5 @@ Usage
 Once this set-up is complete, you can use entities and do queries as shown in [Neo4PHP](https://github.com/lrezek/Neo4PHP). To call functions in the entity manager, simply use the facade you defined above. For example:
 
 ```PHP
-OGM::persist()
+OGM::flush()
 ```
