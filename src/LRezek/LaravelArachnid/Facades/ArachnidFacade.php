@@ -1,4 +1,4 @@
-<?php namespace LRezek\Neo4PHP4Laravel\Facades;
+<?php namespace LRezek\LaravelArachnid\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

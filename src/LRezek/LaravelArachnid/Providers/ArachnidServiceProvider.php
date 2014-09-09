@@ -1,4 +1,4 @@
-<?php namespace LRezek\Neo4PHP4Laravel\Providers;
+<?php namespace LRezek\LaravelArachnid\Providers;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
