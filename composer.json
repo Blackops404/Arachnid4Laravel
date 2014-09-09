@@ -1,6 +1,6 @@
 {
     "name": "lrezek/laravelarachnid",
-    "description": "Arachnid provider and facade for Laravel.",
+    "description": "Arachnid OGM provider and facade for Laravel.",
     "keywords": ["laravel","arachnid","graph", "neo4j", "ogm","entity-mapper","doctrine"],
     "homepage": "https://github.com/lrezek/LaravelArachnid",
     "authors": [
