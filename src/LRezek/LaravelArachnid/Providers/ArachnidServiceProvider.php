@@ -2,11 +2,11 @@
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
-use LRezek\Neo4PHP\Configuration;
-use LRezek\Neo4PHP\EntityManager;
+use LRezek\Arachnid\Configuration;
+use LRezek\Arachnid\Arachnid;
 use Illuminate\Support\ServiceProvider;
 
-class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
+class ArachnidServiceProvider extends ServiceProvider {
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -32,7 +32,7 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('lrezek/neo4php4laravel');
+        $this->package('lrezek/laravelarachnid');
     }
 
     /**
@@ -45,16 +45,16 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
         $app = $this->app;
 
         //Make and share the singleton with the application
-        $app['lrezek.neo4php4laravel.entitymanager'] = $app->share(function ($app)
+        $app['lrezek.laravelarachnid.arachnid'] = $app->share(function ($app)
         {
             //Register annotations with doctrine
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Auto.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/End.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Index.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Start.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Node.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Relation.php');
-            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/neo4php/src/LRezek/Neo4PHP/Annotation/Property.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Auto.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/End.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Index.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Start.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Node.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Relation.php');
+            \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Property.php');
 
             //Get config parameters
             $default = $app['config']->get('database.default');
@@ -75,7 +75,7 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
             }
 
             //Return the new instance (the share method insures it's a singleton)
-            return new EntityManager(new Configuration($config));
+            return new Arachnid(new Configuration($config));
 
         });
     }
@@ -87,6 +87,6 @@ class Neo4PHP4LaravelServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return ['lrezek.neo4php4laravel.entitymanager'];
+        return ['lrezek.laravelarachnid.arachnid'];
     }
 }

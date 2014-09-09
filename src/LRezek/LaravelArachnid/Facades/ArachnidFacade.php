@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class Neo4PHP4LaravelFacade extends Facade
+class ArachnidFacade extends Facade
 {
 
     /**
@@ -13,6 +13,6 @@ class Neo4PHP4LaravelFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'lrezek.neo4php4laravel.entitymanager';
+        return 'lrezek.laravelarachnid.arachnid';
     }
 }

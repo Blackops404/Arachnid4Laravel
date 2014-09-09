@@ -1,17 +1,17 @@
 About
 =====
 
-This is a service provider for Laravel 4.1 for the [Neo4PHP OGM](https://github.com/lrezek/Neo4PHP).
+This is a service provider for Laravel 4.1 for the [Arachnid OGM](https://github.com/lrezek/Arachnid).
 
 Installation
 =============
 
-Add `lrezek/neo4php4laravel` as a requirement to `composer.json`:
+Add `lrezek/laravelarachnid` as a requirement to `composer.json`:
 
 ```JavaScript
 {
     "require": {
-       "lrezek/neo4php4laravel": "dev-master"
+       "lrezek/laravelarachnid": "dev-master"
     }
 }
 ```
@@ -22,7 +22,7 @@ You may need to add the package dependencies as well, depending on your `minimum
 {
     "require": {
        "everyman/neo4jphp":"dev-master",
-       "lrezek/neo4php":"dev-master"
+       "lrezek/arachnid":"dev-master"
     }
 }
 ```
@@ -32,13 +32,13 @@ Update your packages with `composer update` or install with `composer install`.
 Once Composer has updated your packages, you'll need to tell Lavarel about the service provider. Add the following to the `providers` in `app/config/app.php`: 
 
 ```PHP
-'LRezek\Neo4PHP4Laravel\Providers\Neo4PHP4LaravelServiceProvider',
+'LRezek\LaravelArachnid\Providers\ArachnidServiceProvider',
 ```
 
 And the facade to the `facades`:
 
 ```PHP
-'OGM' => 'LRezek\Neo4PHP4Laravel\Facades\Neo4PHP4LaravelFacade',
+'Arachnid' => 'LRezek\LaravelArachnid\Facades\ArachnidFacade',
 ```
 
 Note: You can change the name of the facade (`OGM`) to whatever you like.
@@ -74,8 +74,8 @@ And set the default connection as follows:
 Usage
 ============================
 
-Once this set-up is complete, you can use entities and do queries as shown in [Neo4PHP](https://github.com/lrezek/Neo4PHP). To call functions in the entity manager, simply use the facade you defined above. For example:
+Once this set-up is complete, you can use entities and do queries as shown in [Arachnid](https://github.com/lrezek/Arachnid). To call functions in the entity manager, simply use the facade you defined above. For example:
 
 ```PHP
-OGM::flush()
+Arachnid::flush()
 ```
