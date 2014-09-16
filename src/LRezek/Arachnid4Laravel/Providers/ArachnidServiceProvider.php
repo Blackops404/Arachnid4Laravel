@@ -1,4 +1,4 @@
-<?php namespace LRezek\LaravelArachnid\Providers;
+<?php namespace LRezek\Arachnid4Laravel\Providers;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\CachedReader;
@@ -32,7 +32,7 @@ class ArachnidServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('lrezek/laravelarachnid');
+        $this->package('lrezek/arachnid4laravel');
     }
 
     /**
@@ -45,7 +45,7 @@ class ArachnidServiceProvider extends ServiceProvider {
         $app = $this->app;
 
         //Make and share the singleton with the application
-        $app['lrezek.laravelarachnid.arachnid'] = $app->share(function ($app)
+        $app['lrezek.arachnid4laravel.arachnid'] = $app->share(function ($app)
         {
             //Register annotations with doctrine
             \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(app_path() . '/../vendor/lrezek/arachnid/src/LRezek/Arachnid/Annotation/Auto.php');
@@ -87,6 +87,6 @@ class ArachnidServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return ['lrezek.laravelarachnid.arachnid'];
+        return ['lrezek.arachnid4laravel.arachnid'];
     }
 }

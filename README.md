@@ -6,12 +6,12 @@ This is a service provider for Laravel 4.1 for the [Arachnid OGM](https://github
 Installation
 =============
 
-Add `lrezek/laravelarachnid` as a requirement to `composer.json`:
+Add `lrezek/arachnid4laravel` as a requirement to `composer.json`:
 
 ```JavaScript
 {
     "require": {
-       "lrezek/laravelarachnid": "dev-master"
+       "lrezek/arachnid4laravel": "dev-master"
     }
 }
 ```
@@ -32,13 +32,13 @@ Update your packages with `composer update` or install with `composer install`.
 Once Composer has updated your packages, you'll need to tell Lavarel about the service provider. Add the following to the `providers` in `app/config/app.php`: 
 
 ```PHP
-'LRezek\LaravelArachnid\Providers\ArachnidServiceProvider',
+'LRezek\Arachnid4Laravel\Providers\ArachnidServiceProvider',
 ```
 
 And the facade to the `facades`:
 
 ```PHP
-'Arachnid' => 'LRezek\LaravelArachnid\Facades\ArachnidFacade',
+'Arachnid' => 'LRezek\Arachnid4Laravel\Facades\ArachnidFacade',
 ```
 
 Note: You can change the name of the facade (`OGM`) to whatever you like.
