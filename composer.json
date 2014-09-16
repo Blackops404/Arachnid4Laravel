@@ -3,6 +3,7 @@
     "description": "Arachnid OGM provider and facade for Laravel.",
     "keywords": ["laravel","arachnid","graph", "neo4j", "ogm","entity-mapper","doctrine"],
     "homepage": "https://github.com/lrezek/Arachnid4Laravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "Lukas Rezek",
