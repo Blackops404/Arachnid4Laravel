@@ -41,7 +41,7 @@ And the facade to the `facades`:
 'Arachnid' => 'LRezek\Arachnid4Laravel\Facades\ArachnidFacade',
 ```
 
-Note: You can change the name of the facade (`OGM`) to whatever you like.
+Note: You can change the name of the facade (`Arachnid`) to whatever you like.
 
 Database Configuration
 ===========
